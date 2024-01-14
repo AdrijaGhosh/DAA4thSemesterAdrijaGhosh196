@@ -1,0 +1,70 @@
+#include<stdio.h>
+int main()
+{
+	int i,j,k=0,n,m,x,mid,f=0;
+	printf("Enter the value of n\n");
+	scanf("%d",&n);
+	printf("Enter the value of m\n");
+	scanf("%d",&m);
+	int arr[n][m];
+	printf("\nEnter %dx%d sorted values...\n",n,m);
+	for(i=0;i<n;i++)
+	{
+		for(j=0;j<m;j++)
+		{
+		
+		scanf("%d",&arr[i][j]);
+		}
+	}
+	printf("Enter the value you want to search\n");
+	scanf("%d",&x);
+	while(arr[k][0]<=x)
+	{
+		k++;
+	}
+	int lb=0;
+	int ub=(m-1);
+	while(lb<=ub)
+	{
+		mid=(lb+ub)/2;
+		if(arr[k-1][mid]==x)
+		{
+			f=1;
+			break;
+		}
+		else if(arr[k-1][mid]<x)
+		{
+			lb=mid+1;
+		}
+		else
+		{
+			ub=mid-1;
+		}
+	}
+	if(f==1)
+	printf("Value found..");
+	else
+	printf("Value not found");
+}
+Output:
+Enter the value of n
+3
+Enter the value of m
+3
+
+Enter 3x3 sorted values...
+1
+2
+3
+4
+5
+6
+7
+8
+9
+Enter the value you want to search
+8
+Value found..
+
+
+
